@@ -1,42 +1,132 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* App.css for El Veci Landing Page */
+
+.landing-hero-bg {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #222; /* Or your background */
   text-align: center;
+  padding: 0; /* Ensure no extra padding */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* "Muy pronto" alert styling */
+.landing-muy-pronto {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 2.2rem;
+  margin-top: 2rem;
+  text-shadow: 1px 2px 8px #222;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Logo style */
+.landing-logo {
+  width: 250px;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.15));
+  border-radius: 8rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Main headline */
+.landing-headline {
+  font-size: 2.6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 1px 2px 8px #222;
+}
+
+/* Subheadline/information */
+.landing-subheadline {
+  font-size: 1.35rem;
+  margin-bottom: 2.2rem;
+  max-width: 570px;
+  color: #fefefe;
+  opacity: 0.96;
+  text-shadow: 1px 2px 8px #222;
+}
+
+/* Form area */
+.landing-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 370px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Email input */
+.landing-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  color: #222;
+  box-shadow: 0 0.5px 4px rgba(0, 0, 0, 0.14);
+  transition: box-shadow 0.2s;
+}
+
+.landing-input:focus {
+  box-shadow: 0 1.5px 7px rgba(255, 74, 12, 0.19);
+}
+
+/* Submit button */
+.landing-btn {
+  padding: 0.81rem 1.3rem;
+  font-size: 1.02rem;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(250, 74, 12, 0.13);
+  transition: background 0.17s;
+}
+
+.landing-btn:hover,
+.landing-btn:active {
+  background: #198dc3;
+}
+
+/* Disclaimer/subtext */
+.landing-disclaimer {
+  margin-top: 0.7rem;
+  font-size: 0.95rem;
+  color: #fff;
+  text-shadow: 1px 1px 4px #222;
+  opacity: 0.83;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .landing-muy-pronto {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+  .landing-logo {
+    width: 120px;
+    padding: 0.6rem 1rem;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .landing-headline {
+    font-size: 1.5rem;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .landing-subheadline {
+    font-size: 1rem;
+  }
+  .landing-form {
+    max-width: 99vw;
+  }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./assets/logo.png"; // Add your logo here
 
-import "@/App.css";
+import "./App.css";
 
 const SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbwpWkJSKEdrK7ZsteqrcLv0KI5Ec7vlFrM8izSoncKEWG1HPCap7WqSXVDdiiBtTijMGw/exec";
