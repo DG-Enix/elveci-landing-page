@@ -4,7 +4,7 @@ import logo from "./assets/logo.png"; // Add your logo here
 import "./App.css";
 
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwpWkJSKEdrK7ZsteqrcLv0KI5Ec7vlFrM8izSoncKEWG1HPCap7WqSXVDdiiBtTijMGw/exec";
+  "https://script.google.com/macros/s/AKfycbyMkqbLZurVhNxa0qAatdEjbYJIzuS9nhPod5cEi4PahC3uEVW8ggUOfU5dwxlsW_q2BQ/exec";
 
 function App() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
