@@ -2,7 +2,7 @@ name: Deploy Vite React App to GitHub Pages
 
 on:
   push:
-    branches: [ main ]   # 👈 Change "main" if your default branch is different
+    branches: [main] # 👈 Change "main" if your default branch is different
 
 jobs:
   build-and-deploy:
@@ -35,3 +35,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
+
+      # 6️⃣ Create CNAME file for custom domain
+      - name: Create CNAME file
+        run: echo "elvecimarket.com" > ./dist/CNAME
+        # Make sure to replace "www.elveci.com" with your actual custom domain

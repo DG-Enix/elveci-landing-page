@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./assets/logo.png"; // Add your logo here
 
 import "./App.css";
@@ -7,6 +7,8 @@ const SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbyMkqbLZurVhNxa0qAatdEjbYJIzuS9nhPod5cEi4PahC3uEVW8ggUOfU5dwxlsW_q2BQ/exec";
 
 function App() {
+  const [phone, setPhone] = useState("");
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -43,16 +45,32 @@ function App() {
         <br />
         Fácil, económico y sin complicaciones.
       </p>
-      <form className="landing-form" onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Ingresa tu correo"
-          className="landing-input"
-          required
-        />
-        <button type="submit" className="landing-btn">
-          ¡Únete a la lista!
+      <form onSubmit={handleSubmit} className="landing-form">
+        <label htmlFor="phone" className="block font-medium">
+          Teléfono móvil
+        </label>
+        <div className="landing-input-group">
+          <span className="landing-phone-prefix">+57</span>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="3001234567"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            pattern="[0-9]{10}"
+            required
+            className="landing-input"
+          />
+        </div>
+        <small className="text-gray-500">
+          Ingresa los 10 dígitos del celular
+        </small>
+        <button
+          type="submit"
+          className="mt-3 bg-blue-600 text-white px-4 py-2 rounded-md"
+        >
+          Enviar
         </button>
       </form>
       <div className="landing-disclaimer">
