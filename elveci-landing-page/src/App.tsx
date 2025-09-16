@@ -4,31 +4,38 @@ import logo from "./assets/logo.png"; // Add your logo here
 import "./App.css";
 
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbyMkqbLZurVhNxa0qAatdEjbYJIzuS9nhPod5cEi4PahC3uEVW8ggUOfU5dwxlsW_q2BQ/exec";
+  "https://script.google.com/macros/s/AKfycbzjp_g0ylncmtTLQ5gDmcN6idh9oA0AvJiA592iPa9pkdDtiYa20mcvxpe2vo3_sD86tw/exec";
 
 function App() {
+  const [saving, setSaving] = useState(false);
   const [phone, setPhone] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+    setSaving(true); // 👉 show "Guardando..."
 
     try {
       // Convert FormData to an object and then to URLSearchParams
-      const formEntries = Array.from(formData.entries()) as [string, string][];
+      const form = e.currentTarget;
+      const formData = new FormData();
+      formData.append("phone", phone);
+
       const response = await fetch(SCRIPT_URL, {
         method: "POST",
-        body: new URLSearchParams(formEntries),
+        body: formData,
       });
+
       if (response.ok) {
         alert("Gracias por unirte a la lista!");
         form.reset();
       } else {
         alert("Error al enviar. Intenta de nuevo.");
       }
+
+      setSaving(false);
     } catch {
       alert("Error al enviar. Intenta de nuevo.");
+      setSaving(false);
     }
   };
 
@@ -72,6 +79,9 @@ function App() {
         >
           Enviar
         </button>
+        <div className="landing-page-progress">
+          {saving ? "Guardando..." : ""}
+        </div>
       </form>
       <div className="landing-disclaimer">
         Sé el primero en recibir actualizaciones de El Veci. Prometemos no
