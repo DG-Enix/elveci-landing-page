@@ -1,5 +1,7 @@
 /* App.css for El Veci Landing Page */
 
+@import "tailwindcss";
+
 .landing-hero-bg {
   display: flex; /* enable flexbox */
   flex-direction: column; /* stack children vertically */
@@ -89,6 +91,7 @@
   outline: none;
   box-shadow: 0 0.5px 4px rgba(0, 0, 0, 0.14);
   transition: box-shadow 0.2s;
+  border-color: #fff;
 }
 
 .landing-page-progress {
@@ -130,6 +133,11 @@
   max-width: 350px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Responsive design */
@@ -138,8 +146,9 @@
     font-size: 2rem;
   }
   .landing-logo {
-    width: 120px;
-    padding: 0.6rem 1rem;
+    width: 200px;
+    padding: 1rem;
+    margin-bottom: 1rem;
   }
   .landing-headline {
     font-size: 1.5rem;
