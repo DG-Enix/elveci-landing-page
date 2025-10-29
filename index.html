@@ -9,10 +9,26 @@
     <meta name="apple-mobile-web-app-title" content="El Veci Market" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>El Veci Market</title>
-    <script type="module" crossorigin src="/assets/index-DDyGBPsQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BMKc3BUb.css">
+    <script type="module" crossorigin src="/assets/index-Br0qVDzt.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D1vezsFA.css">
   </head>
   <body>
     <div id="root"></div>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/firebase-messaging-sw.js")
+          .then((registration) => {
+            console.log(
+              "Service Worker registered with scope:",
+              registration.scope
+            );
+          })
+          .catch((error) => {
+            console.error("Service Worker registration failed:", error);
+          });
+      }
+    </script>
   </body>
 </html>
